@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alan Details</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0a0f1c;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND LOGO */
+body::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    background: url('logo.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.07;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+/* FOAM ANIMATION */
+body::after {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(77,166,255,0.2) 10%, transparent 10%);
+    background-size: 60px 60px;
+    animation: foam 8s linear infinite;
+    z-index: 0;
+    opacity: 0.2;
+}
+
+@keyframes foam {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-300px); }
+}
+
+/* CONTENT */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    color: #4da6ff;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background: #4da6ff;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECTIONS */
+.section {
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #11182b;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(77,166,255,0.2);
+}
+
+.highlight {
+    border: 2px solid gold;
+}
+
+/* REVIEWS */
+.review-box {
+    background: #11182b;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #050814;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+    <h1>Alan Details</h1>
+    <p>Mobile Auto Detailing – Buford, GA</p>
+    <a class="btn" href="sms:16788309857">Text to Book</a>
+    <a class="btn" href="https://instagram.com/Alan.Detailss" target="_blank">Instagram</a>
+</div>
+
+<div class="section">
+    <h2>Full Packages</h2>
+    <div class="grid">
+        <div class="card">Basic Full – $130</div>
+        <div class="card highlight">⭐ Standard Full – $160 (Most Popular)</div>
+        <div class="card">Premium Full – $215</div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Exterior</h2>
+    <div class="grid">
+        <div class="card">Basic – $55</div>
+        <div class="card">Standard – $70</div>
+        <div class="card">Premium – $95</div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Interior</h2>
+    <div class="grid">
+        <div class="card">Basic – $65</div>
+        <div class="card">Standard – $90</div>
+        <div class="card">Premium – $120</div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Leave a Review ⭐</h2>
+
+    <div id="reviews"></div>
+
+    <input type="text" id="name" placeholder="Your Name">
+    <textarea id="review" placeholder="Write your review..."></textarea>
+    <button class="btn" onclick="addReview()">Submit</button>
+</div>
+
+<div class="section">
+    <h2>Contact</h2>
+    <p>📞 (678) 830-9857</p>
+    <p>📧 alanguzman1097@gmail.com</p>
+</div>
+
+<footer>
+    <p>© 2026 Alan Details</p>
+</footer>
+
+</div>
+
+<script>
+function addReview() {
+    let name = document.getElementById("name").value;
+    let review = document.getElementById("review").value;
+
+    if(name && review){
+        let div = document.createElement("div");
+        div.className = "review-box";
+        div.innerHTML = "<strong>" + name + ":</strong><br>" + review;
+
+        document.getElementById("reviews").prepend(div);
+
+        document.getElementById("name").value = "";
+        document.getElementById("review").value = "";
+    }
+}
+</script>
+
+</body>
+</html>
