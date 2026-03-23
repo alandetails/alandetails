@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alan Details</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0a0f1c;
+    color: white;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #050814;
+}
+
+nav h1 {
+    color: #4da6ff;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* FOAM ANIMATION */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(77,166,255,0.2) 10%, transparent 10%);
+    background-size: 50px 50px;
+    animation: foam 6s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes foam {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-200px); }
+}
+
+/* HERO IMAGE */
+.hero img.logo {
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.hero h2 {
+    font-size: 30px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background: #4da6ff;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECTIONS */
+.section {
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* PRICING GRID */
+.pricing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #11182b;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(77,166,255,0.2);
+}
+
+.card h3 {
+    color: #4da6ff;
+}
+
+.highlight {
+    border: 2px solid gold;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #050814;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h1>Alan Details</h1>
+</nav>
+
+<div class="hero">
+    <!-- Logo correctly linked -->
+    <img src="logo.png" alt="Alan Details Logo" class="logo">
+    <h2>Mobile Auto Detailing – Buford, GA</h2>
+    <a class="btn" href="sms:16788309857">Text to Book</a>
+    <a class="btn" href="https://instagram.com/Alan.Detailss" target="_blank">Instagram</a>
+</div>
+
+<div class="section">
+    <h2>Exterior Packages</h2>
+    <div class="pricing">
+
+        <div class="card">
+            <h3>Basic Exterior – $55</h3>
+            <p>Contact wash, rim & wheel cleaning, wheel shine</p>
+        </div>
+
+        <div class="card">
+            <h3>Standard Exterior – $70</h3>
+            <p>Pre-wash, door jamb cleaning, bug removal</p>
+        </div>
+
+        <div class="card">
+            <h3>Premium Exterior – $95</h3>
+            <p>Deep wheel cleaning, iron treatment, wax finish</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="section">
+    <h2>Interior Packages</h2>
+    <div class="pricing">
+
+        <div class="card">
+            <h3>Basic Interior – $65</h3>
+            <p>Vacuum, wipe down, screen cleaning</p>
+        </div>
+
+        <div class="card">
+            <h3>Standard Interior – $90</h3>
+            <p>Deep clean, console detail, crevice cleaning</p>
+        </div>
+
+        <div class="card">
+            <h3>Premium Interior – $120</h3>
+            <p>Shampoo, stain removal, steam sanitation</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="section">
+    <h2>Full Packages</h2>
+    <div class="pricing">
+
+        <div class="card">
+            <h3>Basic Full – $130</h3>
+        </div>
+
+        <div class="card highlight">
+            <h3>⭐ Standard Full – $160</h3>
+            <p>Most Popular</p>
+        </div>
+
+        <div class="card">
+            <h3>Premium Full – $215</h3>
+        </div>
+
+    </div>
+</div>
+
+<div class="section">
+    <h2>Add-Ons</h2>
+    <p>Ceramic Protection ($120) • Headlight Restoration ($65) • Trim ($45)</p>
+    <p>Pet Hair ($15–50) • Stain Removal ($50–90) • Leather Conditioning ($30–60)</p>
+</div>
+
+<div class="section contact">
+    <h2>Contact</h2>
+    <p>📍 Buford, GA (Mobile)</p>
+    <p>📞 (678) 830-9857</p>
+    <p>📧 alanguzman1097@gmail.com</p>
+</div>
+
+<footer>
+    <p>© 2026 Alan Details</p>
+</footer>
+
+</body>
+</html>
